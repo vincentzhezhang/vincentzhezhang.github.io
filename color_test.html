@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script type="text/javascript">
+      var colors = ['black', 'white', 'red', 'green', 'blue', 'cyan', 'magenta', 'yellow'];
+      var colorIndex = 0;
+      var keyCodes = { next: [32, 39, 40],
+                       previous: [37, 38] }
+
+      document.addEventListener("DOMContentLoaded", function() {
+        var $body;
+        console.log(colors);
+        $body = document.getElementsByTagName('body')[colorIndex];
+        $body.style.background = colors[0];
+
+        document.onkeydown = function (e) {
+          e = e || window.event;
+          if (keyCodes.next.indexOf(e.keyCode) > -1) {
+            colorIndex +=1 ;
+
+            if (colorIndex > colors.length) { colorIndex = 0 };
+            console.log(colorIndex);
+            $body.style.background = colors[colorIndex]
+
+          } else if (keyCodes.previous.indexOf(e.keyCode) > -1) {
+            colorIndex -= 1;
+
+            if (colorIndex < 0) { colorIndex = colors.length };
+            console.log(colorIndex);
+            $body.style.background = colors[colorIndex]
+          } else {
+            console.log(e.keyCode);
+          };
+        };
+      });
+    </script>
+  </head>
+  <body style="margin: 0">
+  </body>
+</html>
