@@ -1,6 +1,0 @@
-#!/bin/bash
-time_pre="<tr><td colspan=\"10\" style=\"color:salmon;text-align:center!important\">Last updated on "
-time_suf="</td></tr>"
-time_stamp=$time_pre"`date +"%H:%M:%S %A %b %d"`"$time_suf
-echo $time_stamp > ~/placeholder/dc.html
-wget -qO- "www.hp.com/cgi-bin/sbso/exit.cgi?goto=bstore/buspurchase_refurbished/computing/price_list" | grep -B 3 -A 3 Dream| grep -v "\-\-" >> ~/placeholder/dc.html

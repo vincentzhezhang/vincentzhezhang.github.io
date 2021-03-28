@@ -1,1 +1,1 @@
-#placeholder for my personal website
+# Placeholder
